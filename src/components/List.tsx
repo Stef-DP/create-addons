@@ -43,7 +43,8 @@ export default function List({ mod, defaultPlatform }: Props) {
 				<div className="flex justify-between items-baseline pb-2">
 					<h5 className="card-title mb-0">
 						<Image
-							src={modData.icon === "" ? defaultModIcon : modData.icon}
+							src={!modData.icon ? defaultModIcon : modData.icon}
+							unoptimized={modData.icon?.endsWith(".gif") || false}
 							className="size-10 inline-block rounded-2xl mr-2"
 							alt="mod logo"
 							width={20}

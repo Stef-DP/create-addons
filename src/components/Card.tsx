@@ -44,8 +44,8 @@ export default function Card({ mod, defaultPlatform }: Props) {
 				<h5 className="card-title mb-0 flex justify-between">
 					<div className="max-w-[80%]">
 						<Image
-							src={modData.icon === "" ? defaultModIcon : modData.icon}
-							unoptimized={modData.icon.endsWith(".gif")}
+							src={!modData.icon ? defaultModIcon : modData.icon}
+							unoptimized={modData.icon?.endsWith(".gif") || false}
 							className="size-10 inline-block rounded-2xl mr-2"
 							alt="mod logo"
 							width={20}
